@@ -1,0 +1,11 @@
+appBar , row , column , padding 
+
+
+RichText , mediaQuery , safeArea without appBar 
+
+
+
+definitions : scaffold , safArea , const final , filled f textField and fillColor
+
+
+Avatar.. yndaro m3a lw9t 
