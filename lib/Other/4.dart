@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:socode/colors.dart';
+import 'package:socode/Other/colors.dart';
 
 class StackContainerDemo extends StatelessWidget {
   const StackContainerDemo({super.key});

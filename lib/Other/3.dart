@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:socode/colors.dart';
+import 'package:socode/Other/colors.dart';
 
 class SafeAreaScrollIconButtonDemo extends StatelessWidget {
   const SafeAreaScrollIconButtonDemo({super.key});

@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:socode/colors.dart';
+import 'package:socode/Other/colors.dart';
 
 class ExpandedOnlyExample extends StatelessWidget {
   @override
