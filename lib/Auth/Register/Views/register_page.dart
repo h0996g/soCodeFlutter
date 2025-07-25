@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:socode/Auth/Login/Views/widgets/circular_avatar_widget.dart';
 import 'package:socode/Auth/Login/Views/widgets/circular_positioned_container_widget.dart';
-import 'package:socode/Auth/Login/Views/widgets/form_login_widget.dart';
 import 'package:socode/Auth/Login/Views/widgets/gradient_container_widget.dart';
+import 'package:socode/Auth/Register/Views/Widgets/form_register_widget.dart';
 import 'package:socode/Other/colors.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // Gradient background
       body: Stack(
+        alignment: Alignment.center,
+
         children: [
           const GradientContainerWidget(),
           CircularPositionedContainerWidget(
@@ -36,22 +36,10 @@ class LoginPage extends StatelessWidget {
             height: 100,
             color: AppColors.second.withValues(alpha: 0.11),
           ),
-
-          //----------- Login Form -----------
-          const Align(
-            alignment: Alignment.center,
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 30.0),
-              child: Stack(
-                clipBehavior: Clip.none,
-                children: [
-                  // Form
-                  CustomFormContainerWidget(),
-                  // Glowing logo/icon above the card
-                  CircularAvatarWidget(),
-                ],
-              ),
-            ),
+          // Register Form
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30.0),
+            child: FormRegisterWidget(),
           ),
         ],
       ),

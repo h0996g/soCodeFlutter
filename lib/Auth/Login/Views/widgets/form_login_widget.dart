@@ -1,4 +1,6 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:socode/Auth/Register/Views/register_page.dart';
 import 'package:socode/Components/custom_button_widget.dart';
 import 'package:socode/Components/text_field.dart';
 import 'package:socode/Other/colors.dart';
@@ -9,7 +11,7 @@ class CustomFormContainerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 26, vertical: 36),
+      padding: EdgeInsets.only(bottom: 36, left: 26, right: 26),
       decoration: BoxDecoration(
         color: AppColors.second.withValues(alpha: 0.69),
         borderRadius: BorderRadius.circular(32),
@@ -56,6 +58,38 @@ class CustomFormContainerWidget extends StatelessWidget {
           Text(
             "Forgot password?",
             style: TextStyle(color: Colors.white54, fontSize: 15),
+          ),
+          SizedBox(height: 20),
+          // Sign Up Link as RichText
+          RichText(
+            text: TextSpan(
+              text: "Don't have an account? ",
+              style: TextStyle(
+                color: Colors.white70,
+                fontSize: 16,
+                fontWeight: FontWeight.w400,
+              ),
+              children: [
+                TextSpan(
+                  text: "Sign Up",
+                  style: TextStyle(
+                    color: AppColors.first,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                  ),
+                  recognizer:
+                      TapGestureRecognizer()
+                        ..onTap = () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const RegisterPage(),
+                            ),
+                          );
+                        },
+                ),
+              ],
+            ),
           ),
         ],
       ),

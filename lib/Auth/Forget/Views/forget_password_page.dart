@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:socode/Auth/Login/Views/widgets/circular_avatar_widget.dart';
 import 'package:socode/Auth/Login/Views/widgets/circular_positioned_container_widget.dart';
-import 'package:socode/Auth/Login/Views/widgets/form_login_widget.dart';
 import 'package:socode/Auth/Login/Views/widgets/gradient_container_widget.dart';
+import 'package:socode/Components/custom_button_widget.dart';
+import 'package:socode/Components/text_field.dart';
 import 'package:socode/Other/colors.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class ForgetPasswordPage extends StatelessWidget {
+  const ForgetPasswordPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // Gradient background
       body: Stack(
         children: [
           const GradientContainerWidget(),
@@ -36,17 +36,43 @@ class LoginPage extends StatelessWidget {
             height: 100,
             color: AppColors.second.withValues(alpha: 0.11),
           ),
-
-          //----------- Login Form -----------
-          const Align(
+          // Forget Password Form
+          Align(
             alignment: Alignment.center,
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 30.0),
               child: Stack(
                 clipBehavior: Clip.none,
                 children: [
-                  // Form
-                  CustomFormContainerWidget(),
+                  // Forget password form
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 50.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          'Forgot Password?',
+                          style: TextStyle(
+                            fontSize: 26,
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.first,
+                          ),
+                        ),
+                        SizedBox(height: 30),
+                        // Email Input Field
+                        CustomTextFieldWidget(
+                          labelText: 'Email',
+                          keyboardType: TextInputType.emailAddress,
+                        ),
+                        SizedBox(height: 32),
+                        // Reset Password Button
+                        CustomButtonWidget(
+                          buttonText: 'Reset Password',
+                          onPressed: () {},
+                        ),
+                      ],
+                    ),
+                  ),
                   // Glowing logo/icon above the card
                   CircularAvatarWidget(),
                 ],
