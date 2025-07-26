@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:socode/Auth/Login/Views/login.dart';
+import 'package:socode/Profile/Views/profile_page.dart';
 
 void main() {
   runApp(MyApp());
