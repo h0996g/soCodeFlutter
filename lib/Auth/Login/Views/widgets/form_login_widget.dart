@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:socode/Auth/Forget/Views/forget_password_page.dart';
 import 'package:socode/Auth/Register/Views/register_page.dart';
 import 'package:socode/Components/custom_button_widget.dart';
 import 'package:socode/Components/text_field.dart';
@@ -55,9 +56,19 @@ class CustomFormContainerWidget extends StatelessWidget {
           SizedBox(height: 32),
           CustomButtonWidget(buttonText: 'Login', onPressed: () {}),
           SizedBox(height: 15),
-          Text(
-            "Forgot password?",
-            style: TextStyle(color: Colors.white54, fontSize: 15),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ForgetPasswordPage(),
+                ),
+              );
+            },
+            child: Text(
+              "Forgot password?",
+              style: TextStyle(color: Colors.white54, fontSize: 15),
+            ),
           ),
           SizedBox(height: 20),
           // Sign Up Link as RichText

@@ -7,7 +7,7 @@ import 'package:socode/Components/text_field.dart';
 import 'package:socode/Other/colors.dart';
 
 class ForgetPasswordPage extends StatelessWidget {
-  const ForgetPasswordPage({Key? key}) : super(key: key);
+  const ForgetPasswordPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -45,32 +45,51 @@ class ForgetPasswordPage extends StatelessWidget {
                 clipBehavior: Clip.none,
                 children: [
                   // Forget password form
-                  Padding(
-                    padding: EdgeInsets.symmetric(vertical: 50.0),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          'Forgot Password?',
-                          style: TextStyle(
-                            fontSize: 26,
-                            fontWeight: FontWeight.bold,
-                            color: AppColors.first,
-                          ),
-                        ),
-                        SizedBox(height: 30),
-                        // Email Input Field
-                        CustomTextFieldWidget(
-                          labelText: 'Email',
-                          keyboardType: TextInputType.emailAddress,
-                        ),
-                        SizedBox(height: 32),
-                        // Reset Password Button
-                        CustomButtonWidget(
-                          buttonText: 'Reset Password',
-                          onPressed: () {},
+                  Container(
+                    decoration: BoxDecoration(
+                      color: AppColors.second.withValues(alpha: 0.69),
+                      borderRadius: BorderRadius.circular(32),
+                      boxShadow: [
+                        BoxShadow(
+                          color: AppColors.third.withValues(alpha: 0.20),
+                          blurRadius: 24,
+                          offset: Offset(0, 12),
                         ),
                       ],
+                      border: Border.all(
+                        color: AppColors.first.withValues(alpha: 0.08),
+                        width: 1.7,
+                      ),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.only(bottom: 36, left: 26, right: 26),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          SizedBox(height: 48),
+
+                          Text(
+                            'Forgot Password?',
+                            style: TextStyle(
+                              fontSize: 26,
+                              fontWeight: FontWeight.bold,
+                              color: AppColors.first,
+                            ),
+                          ),
+                          SizedBox(height: 30),
+                          // Email Input Field
+                          CustomTextFieldWidget(
+                            labelText: 'Email',
+                            keyboardType: TextInputType.emailAddress,
+                          ),
+                          SizedBox(height: 32),
+                          // Reset Password Button
+                          CustomButtonWidget(
+                            buttonText: 'Reset Password',
+                            onPressed: () {},
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   // Glowing logo/icon above the card

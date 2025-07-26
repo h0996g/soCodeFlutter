@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:socode/Auth/Login/Views/login.dart';
 
 void main() {
