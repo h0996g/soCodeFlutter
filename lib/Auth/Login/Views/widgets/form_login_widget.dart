@@ -11,6 +11,7 @@ class CustomFormContainerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('CustomFormContainerWidget build called');
     return Container(
       padding: EdgeInsets.only(bottom: 36, left: 26, right: 26),
       decoration: BoxDecoration(
@@ -54,7 +55,16 @@ class CustomFormContainerWidget extends StatelessWidget {
           SizedBox(height: 20),
           CustomTextFieldWidget(labelText: 'Password', isPassword: true),
           SizedBox(height: 32),
-          CustomButtonWidget(buttonText: 'Login', onPressed: () {}),
+          CustomButtonWidget(
+            buttonText: 'Login',
+            onPressed: () {
+              // Navigator.pushAndRemoveUntil(
+              //   context,
+              //   MaterialPageRoute(builder: (context) => const HomePage()),
+              //   (route) => false,
+              // );
+            },
+          ),
           SizedBox(height: 15),
           GestureDetector(
             onTap: () {
@@ -97,6 +107,7 @@ class CustomFormContainerWidget extends StatelessWidget {
                               builder: (context) => const RegisterPage(),
                             ),
                           );
+                          // Navigator.p
                         },
                 ),
               ],
